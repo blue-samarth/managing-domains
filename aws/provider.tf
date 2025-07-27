@@ -1,0 +1,16 @@
+locals {
+  name          = "<NAME_OF_YOUR_PROJECT>"
+  region        = "ap-south1"
+  org_shorthand = "<ORG_SHORTHAND>"
+  environment   = "prod"
+
+  vpc_cidr = "10.0.0.0/16"                           # VPC CIDR block
+  azs      = ["list", "of", "availability", "zones"] # Availability Zones
+
+  cluster_version = "1.33" # EKS cluster version
+
+  domain  = "example.com"    # Replace with your domain
+  zone_id = "<YOUR_ZONE_ID>" # Route53 zone ID for the domain
+
+  cloudflare_zone_id = "<YOUR_CLOUDFLARE_ZONE_ID>" # Cloudflare zone ID for the domain
+}
