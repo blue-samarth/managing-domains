@@ -1,6 +1,6 @@
 resource "google_certificate_manager_dns_authorization" "cert_manager_dns_authorization" {
     project = module.project.project_id
-    name = lower(join("-", local.domain,"cert", "manager", "dns","auth"))
+    name = lower(join("-", [local.domain, "cert", "manager", "dns", "auth"]))
 
     location = "global"
     description = "DNS Authorization for Certificate Manager for ${local.domain}"
