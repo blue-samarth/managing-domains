@@ -12,7 +12,7 @@ locals {
   vpc_cidr = "10.0.0.0/16"                           # VPC CIDR block
   azs      = ["list", "of", "availability", "zones"] # Availability Zones
 
-  cluster_version = "1.33" # EKS cluster version
+  cluster_version = "1.33" # GKE cluster version
   namespace = ["production", "staging", "development"]
 
   domain  = "example.com"    # Replace with your domain
