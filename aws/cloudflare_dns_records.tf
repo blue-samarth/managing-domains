@@ -1,7 +1,9 @@
 resource "cloudflare_dns_record" "caa_acm_amazon_issuer" {
   zone_id = local.cloudflare_zone_id
-  type    = "CAA"
-  ttl     = 300
+
+  name = local.domain
+  type = "CAA"
+  ttl  = 300
 
   data = {
     tag   = "issue"
@@ -13,8 +15,10 @@ resource "cloudflare_dns_record" "caa_acm_amazon_issuer" {
 
 resource "cloudflare_dns_record" "caa_acm_amazon_trust_issuer" {
   zone_id = local.cloudflare_zone_id
-  type    = "CAA"
-  ttl     = 300
+
+  name = local.domain
+  type = "CAA"
+  ttl  = 300
 
   data = {
     tag   = "issue"
