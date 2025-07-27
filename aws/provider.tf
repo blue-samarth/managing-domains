@@ -1,6 +1,6 @@
 locals {
   name          = "<NAME_OF_YOUR_PROJECT>"
-  region        = "ap-south1"
+  region        = "ap-south-1"
   org_shorthand = "<ORG_SHORTHAND>"
   environment   = "prod"
 
