@@ -21,7 +21,7 @@ resource "cloudflare_dns_record" "caa_acm_amazon_trust_issuer" {
   ttl  = 300
 
   data = {
-    tag   = "issue"
+    tag   = "issuewild"
     value = "amazontrust.com"
   }
 
