@@ -34,7 +34,7 @@ resource "kubernetes_ingress_v1" "ingress_service" {
       }])
 
       "alb.ingress.kubernetes.io/target-group-attributes" = "slow_start.duration_seconds=30,stickiness.enabled=true,stickiness.type=lb_cookie,stickiness.lb_cookie.duration_seconds=86400,deregistration_delay.timeout_seconds=300"
-      "alb.ingress.kubernetes.io/actions.response-200" = jsonencode({
+      "alb.ingress.kubernetes.io/actions.response-401" = jsonencode({
         type = "fixed-response"
         fixedResponseConfig = {
           Protocol    = "HTTPS"
