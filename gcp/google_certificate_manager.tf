@@ -23,13 +23,13 @@ resource "google_certificate_manager_certificate" "cert_manager_root" {
 
 resource "google_certificate_manager_certificate_map" "cert_manager_map" {
     project = module.project.project_id
-    name = lower(join("-", local.domain,"cert", "manager", "map"))
+    name = lower(join("-", [local.domain, "cert", "manager", "map"]))
     description = "Certificate Map for ${local.domain} using Certificate Manager"
 }
 
 resource "google_certificate_manager_certificate_map_entry" "cert_manager_map_entry" {
     project = module.project.project_id
-    name = lower(join("-", local.domain,"cert", "manager", "map", "entry"))
+    name = lower(join("-", [local.domain, "cert", "manager", "map", "entry"]))
     description = "Certificate Map Entry for ${local.domain} using Certificate Manager"
     
     map = google_certificate_manager_certificate_map.cert_manager_map.id
