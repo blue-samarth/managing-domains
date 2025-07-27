@@ -16,7 +16,7 @@ locals {
   namespace = ["production", "staging", "development"]
 
   domain  = "example.com"    # Replace with your domain
-  zone_id = "<YOUR_ZONE_ID>" # Route53 zone ID for the domain
+  zone_id = "<YOUR_ZONE_ID>" # Google Cloud DNS zone ID for the domain
 
   cloudflare_zone_id = "<YOUR_CLOUDFLARE_ZONE_ID>" # Cloudflare zone ID for the domain
 }
