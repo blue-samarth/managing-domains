@@ -15,7 +15,7 @@ module "acm_service" {
   validation_method       = "DNS"
   validation_record_fqdns = cloudflare_dns_record.dns_record_validation[*].name
 
-  tags = merge(module.tags.tages, {
+  tags = merge(module.tags.tags, {
     Name = local.domain
   })
 }
@@ -28,7 +28,7 @@ resource "cloudflare_dns_record" "dns_record_validation" {
   type    = element(module.acm_service.validation_domains, count.index)["resource_record_type"]
   ttl     = 300
 
-  content = trimsuffix(element(module.acm_service.validation_domains, count.index)["resource_record_name"], ".")
+  content = trimsuffix(element(module.acm_service.validation_domains, count.index)["resource_record_values"], ".")
   comment = "ACM DNS validation for ${local.domain} - ${element(module.acm_service.validation_domains, count.index)["resource_record_type"]}"
 
   proxied = false
