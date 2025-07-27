@@ -10,7 +10,7 @@ resource "google_certificate_manager_dns_authorization" "cert_manager_dns_author
 
 resource "google_certificate_manager_certificate" "cert_manager_root" {
     project = module.project.project_id
-    name = lower(join("-", local.domain,"cert", "manager", "root"))
+    name = lower(join("-", [local.domain, "cert", "manager", "root"]))
     description = "Wildcard Certificate for ${local.domain} using Certificate Manager"
     
     managed {
